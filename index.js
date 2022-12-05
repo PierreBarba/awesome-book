@@ -44,3 +44,14 @@ function getTasks() {
   for(let i = 0; i < tasks.length; i++) {
     let title = tasks[i].title;
     let author = tasks[i].author;
+   
+    tasksView.innerHTML += `
+    <div class="book-card">
+        <p class="book-title">${title}</p>
+        <p class="book-author">${author}</p>
+        <button type="button" class="book-btn" onclick="deleteTask('${title}')">Remove</button>
+    </div>
+    <hr>`;
+    }
+}
+getTasks();
