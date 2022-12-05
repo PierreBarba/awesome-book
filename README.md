@@ -70,8 +70,8 @@ To get a local copy up and running, follow these steps.
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-- [ ] **[I will learn more aboute javascript]**
-- [ ] **[and create more functions with js]**
+- [ ] **[practice more javascript]**
+- [ ] **[practice more abute localstorage]**
 
 
 ## 🤝 Contributing <a name="contributing"></a>
@@ -95,11 +95,6 @@ If you like this project...
 ## 🙏 Acknowledgments <a name="acknowledgements"></a>
 
 - Microverse 
--  Original design idea by [Cindy Shin in Behance](https://www.behance.net/adagio07)
-- [Creative commons](https://creativecommons.org/licenses/by-nc/4.0/)
-
-I would like to thank to my stand up colleagues, to my coding partner.
-
 
 ## 📝 License <a name="license"></a>
 
