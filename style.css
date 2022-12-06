@@ -44,7 +44,7 @@ form {
 }
 
 .book-card:nth-child(even) {
-  background: white;
+  background: rgb(255, 255, 255);
 }
 
 .book-title,
