@@ -1,7 +1,7 @@
 class BookCollection {
   #index;
   tasks;
- 
+
   getTasks() {
     this.tasks = JSON.parse(localStorage.getItem('tasks')) || [];
     const tasksView = document.getElementById('tasks');
@@ -13,6 +13,7 @@ class BookCollection {
       tasksView.innerHTML += `
       <div class="book-card" id = "${title}">
           <p class="book-title">${title}</p>
+          <p> By </p>
           <p class="book-author">${author}</p>
           <button type="button" class="book-btn" onclick="books.deleteTask('${title}')">Remove</button>
           <hr>
