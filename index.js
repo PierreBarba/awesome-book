@@ -47,7 +47,7 @@ class BookCollection {
   deleteTask(title) {
     const tasks = JSON.parse(localStorage.getItem('tasks')) || [];
     for (let i = 0; i < tasks.length; i += 1) {
-      if (tasks[i].title === title) {
+      if (this.tasks[i].title === title) {
         tasks.splice(i, 1);
       }
     }
