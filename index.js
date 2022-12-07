@@ -10,13 +10,14 @@ class BookCollection {
     for (let i = 0; i < this.tasks.length; i += 1) {
       const { title } = this.tasks[i];
       const { author } = this.tasks[i];
+      const id = `${title}-${i}`.split(' ').join('');
 
       tasksView.innerHTML += `
-      <div class="book-card" id = "${title}">
+      <div class="book-card" id = ${id}>
           <p class="book-title">${title}</p>
           <p> By </p>
           <p class="book-author">${author}</p>
-          <button type="button" class="book-btn" onclick="books.deleteTask('${title}')">Remove</button>
+          <button type="button" class="book-btn" onclick="books.deleteTask('${id}','${title}')">Remove</button>
           <hr>
       </div>`;
     }
@@ -44,14 +45,15 @@ class BookCollection {
     document.getElementById('form').reset();
   }
 
-  deleteTask(title) {
+  deleteTask(id,title) {
     const tasks = JSON.parse(localStorage.getItem('tasks')) || [];
+    const book = document.getElementById(id)
     for (let i = 0; i < tasks.length; i += 1) {
-      if (this.tasks[i].title === title) {
+      if (this.tasks[i].title === title && book != null) { 
         tasks.splice(i, 1);
       }
     }
-    document.getElementById(title).remove();
+    book.remove();
     localStorage.setItem('tasks', JSON.stringify(tasks));
   }
 }
