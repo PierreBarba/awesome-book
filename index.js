@@ -58,14 +58,12 @@ class BookCollection {
   }
 }
 
-const books = new BookCollection();
+let books = new BookCollection();
 books.getTasks();
 document.getElementById('form').addEventListener('submit', (e) => {
   e.preventDefault();
   books.saveTask();
 });
-
-let hour = new BookCollection();
 
 window.addEventListener('load', () => {
   // display the date
@@ -76,14 +74,16 @@ window.addEventListener('load', () => {
     books.books.forEach((element) => {
       books.getTasks(element);
     });
-  } else {
-    hour = new BookCollection();
   }
 });
 
 document.getElementById('form').addEventListener('submit', (e) => {
   e.preventDefault();
-  books.saveTask(document.getElementById('title').value, document.getElementById('author').value);
+
+  books.saveTask(
+    document.getElementById('title').value,
+    document.getElementById('author').value,
+  );
   document.getElementById('title').value = '';
   document.getElementById('author').value = '';
 });
