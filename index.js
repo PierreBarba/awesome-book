@@ -15,7 +15,7 @@ class BookCollection {
       tasksView.innerHTML += `
       <div class="book-card" id = ${id}>
           <p class="book-title">${title}</p>
-          <p> By </p>
+          <p>By</p>
           <p class="book-author">${author}</p>
           <button type="button" class="book-btn" onclick="books.deleteTask('${id}','${title}')">Remove</button>
           <hr>
@@ -63,4 +63,45 @@ books.getTasks();
 document.getElementById('form').addEventListener('submit', (e) => {
   e.preventDefault();
   books.saveTask();
+});
+
+let hour = new BookCollection();
+
+window.addEventListener('load', () => {
+  // display the date
+  document.getElementById('date').innerText = new Date().toLocaleString();
+  // fetch data from local storage
+  if (JSON.parse(localStorage.getItem('books')) !== null) {
+    books = new BookCollection(JSON.parse(localStorage.getItem('books')));
+    books.books.forEach((element) => {
+      books.getTasks(element);
+    });
+  } else {
+    hour = new BookCollection();
+  }
+});
+
+document.getElementById('form').addEventListener('submit', (e) => {
+  e.preventDefault();
+  books.saveTask(document.getElementById('title').value, document.getElementById('author').value);
+  document.getElementById('title').value = '';
+  document.getElementById('author').value = '';
+});
+
+document.getElementById('list-link').addEventListener('click', () => {
+  document.getElementById('book-cont').classList.remove('hidden');
+  document.getElementById('form').classList.add('hidden');
+  document.getElementById('contact').classList.add('hidden');
+});
+
+document.getElementById('add-link').addEventListener('click', () => {
+  document.getElementById('book-cont').classList.add('hidden');
+  document.getElementById('form').classList.remove('hidden');
+  document.getElementById('contact').classList.add('hidden');
+});
+
+document.getElementById('contact-link').addEventListener('click', () => {
+  document.getElementById('book-cont').classList.add('hidden');
+  document.getElementById('form').classList.add('hidden');
+  document.getElementById('contact').classList.remove('hidden');
 });
