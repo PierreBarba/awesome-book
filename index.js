@@ -7,6 +7,7 @@ class BookCollection {
     this.tasks = JSON.parse(localStorage.getItem('tasks')) || [];
     const tasksView = document.getElementById('tasks');
     tasksView.innerHTML = '';
+
     for (let i = 0; i < this.tasks.length; i += 1) {
       const { title } = this.tasks[i];
       const { author } = this.tasks[i];
@@ -60,10 +61,6 @@ class BookCollection {
 
 let books = new BookCollection();
 books.getTasks();
-document.getElementById('form').addEventListener('submit', (e) => {
-  e.preventDefault();
-  books.saveTask();
-});
 
 window.addEventListener('load', () => {
   // display the date
