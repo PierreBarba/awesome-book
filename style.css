@@ -15,6 +15,7 @@ body {
   width: 100%;
   margin: 0% 0% 0% 0%;
 }
+
 header {
   border: 1px solid black;
 }
@@ -29,6 +30,7 @@ h2 {
 
 form {
   text-align: center;
+  width: 100%;
 }
 
 .form-title {
@@ -37,8 +39,8 @@ form {
 }
 
 .form-element {
-  width: 26%;
-  margin: 8px;
+  width: 240px;
+  margin: 2px;
 }
 
 .book-card {
@@ -75,24 +77,10 @@ form {
   padding: 0.5rem 2rem;
 }
 
-form {
-  width: 100%;
-}
-
-.form-title {
-  margin-top: 5px;
-  text-align: center;
-}
-
-.form-element {
-  width: 240px;
-  margin: 2px;
-}
-
 #add-btn {
-  float: revert;
-  margin-top: 5px;
+  margin: 0% 0% 0% 17%;
 }
+
 .header {
   display: flex;
   justify-content: space-between;
@@ -125,20 +113,23 @@ form {
 }
 
 footer {
-  padding: 0px;
+  padding: 0;
 }
 
 footer p {
   border: 1px solid black;
   padding: 10px;
 }
+
 .date {
   display: flex;
   justify-content: flex-end;
 }
+
 .hidden {
   display: none;
 }
+
 #contact p {
   margin: 0% 0% 0% 38%;
 }
