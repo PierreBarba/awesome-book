@@ -45,11 +45,11 @@ class BookCollection {
     document.getElementById('form').reset();
   }
 
-  deleteTask(id,title) {
+  deleteTask(id, title) {
     const tasks = JSON.parse(localStorage.getItem('tasks')) || [];
-    const book = document.getElementById(id)
+    const book = document.getElementById(id);
     for (let i = 0; i < tasks.length; i += 1) {
-      if (this.tasks[i].title === title && book != null) { 
+      if (this.tasks[i].title === title && book != null) {
         tasks.splice(i, 1);
       }
     }
